@@ -25,7 +25,7 @@ i.e it takes the path of ```rafiSimplestorage.sol``` and paste all code of this 
 
 
 !![w16](https://user-images.githubusercontent.com/89090776/231071349-512178a6-c6e7-4fa0-af93-8e68b5f32cc5.jpg)
-Figure7: here we see that that the contract ```contract rafiStoragefactory``` have deployed contract ```contract rafiSimplestorage```. 
+Figure1: here we see that that the contract ```contract rafiStoragefactory``` have deployed contract ```contract rafiSimplestorage```. 
 
 When a contract of a file deploy contract of another file the solidity version of both file must be compatible i.e if version of of a file is ^0.8.0 other <br>
 must not be ^0.7.0<br>
@@ -37,35 +37,31 @@ Here we have worked with array
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.0;
 
-import "./akrkSimplestorage.sol";
+import "./rafiSimplestorage.sol";
 
-contract akrkStoragefactory {
+contract rafiStoragefactory {
 
-    akrkSimplestorage[] public akrksimplestorageArray; ////here we have created an array to store addresses of the contracts
-
-
-    function createakrkSimplestorage() public{
-        akrkSimplestorage akrksimplestorage = new akrkSimplestorage();// here we save it as a memory variable
-       //here `new` keyword is used to let the solidiy know that we are going to deploy new akrkSimplestorage()
+    rafiSimplestorage[] public rafisimplestorageArray; ////here we have created an array to store addresses of the contracts
 
 
-       akrksimplestorageArray.push(akrksimplestorage);// adding akrksimplestorage variable to akrksimplestorageArray
+    function createrafiSimplestorage() public{
+        rafiSimplestorage rafisimplestorage = new rafiSimplestorage();// here we save it as a memory variable
+       //here `new` keyword is used to let the solidiy know that we are going to deploy new rafiSimplestorage()
+
+
+       rafisimplestorageArray.push(rafisimplestorage);// adding rafisimplestorage variable to rafisimplestorageArray
 
 
 
-    } // This is a function to deploy our akrkSimplestorage contract
+    } // This is a function to deploy our rafiSimplestorage contract
 
 }
 
 ```
 
-![w17](https://user-images.githubusercontent.com/89090776/231091399-87e97613-e150-4939-a324-9e6bd8a97986.jpg)
-Figure8: after deploying the contract we see that we have ```akrksimplestorageArray``` view button
-![w18](https://user-images.githubusercontent.com/89090776/231092783-1a901de0-65bd-481e-9347-2e89f14ac274.jpg)
-Figure9: here when we click ```createakrkSimplestorage``` button transaction occured that means contract was deployed and then we typed '0' at the field of <br> ```akrksimplestorageArray``` button and see that at '0' inex an address of the contract have been assinged.
 
 ![w19](https://user-images.githubusercontent.com/89090776/231094487-f568517d-ca21-4724-91ec-20c90317206f.jpg)
-Figure10: Again we click on ```createakrkSimplestorage``` button transaction will occur that means contract will be deployed and if we typed '1' at the field of <br> ```akrksimplestorageArray``` button and see that at '1' inex a new address of the contract have been assinged.
+Figure2: Again we click on ```createrafiSimplestorage``` button transaction will occur that means contract will be deployed and if we typed '0' at the field of <br> ```rafisimplestorageArray``` button and see that at '0' index a new address of the contract have been assinged.
 
 
 
@@ -73,7 +69,7 @@ Figure10: Again we click on ```createakrkSimplestorage``` button transaction wil
 
 
 
-### Interacting with other contracts
+### Contract Interacting with other contract
 
 Here we will show that how to call a function of ```akrkSimplestorage.sol``` file  from ```akrkStorageFactory.sol``` file. In order to interact with any contract <br>
 we always gonna need two things the address of the contract and ABI of the contract <br>
